@@ -5,8 +5,10 @@ class_name BridgedPin
 onready var _jscb_get_joystick_update = JavaScript.create_callback(self, "_get_joystick_update")
 var touch_stick : Vector2
 var touch_stick_locked : float = 0.0
-func _get_joystick_update(_touch_stick):
-	touch_stick = _touch_stick
+func _get_joystick_update(args):
+	print("JOYSTUCK UPDATE RECVD")
+	print(args)
+	touch_stick = Vector2(args[0], args[1])
 	if touch_stick:
 		stick = touch_stick
 		touch_stick_locked = 10.0
@@ -19,10 +21,11 @@ func _ready():
 	var Bridge = JavaScript.get_interface("Bridge");
 	if Bridge:
 		Bridge.report_connection()
+		prints("do i have a callback?", _jscb_get_joystick_update)
 		Bridge.setup_joystick_if_mobile(_jscb_get_joystick_update)
 		print("BRIDGE SUCCESS")
 	else:
-		print("BRIDGE FAILED")
+		print("No bridge (maybe you're not running on web?)")
 
 
 func process_pins():
