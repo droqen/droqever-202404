@@ -2,7 +2,7 @@ extends KinematicBody2D
 class_name NavdiMovingGuy
 
 enum {FLORBUF=5939,JUMPBUF}
-var bufs : Bufs = Bufs.new([[FLORBUF, 4]])
+var bufs : Bufs = Bufs.new([[FLORBUF, 10], [JUMPBUF, 10]]) # is probably too much
 
 onready var spr : SheetSprite = _try_get_spr()
 onready var pin : Pin = _try_get_pin()

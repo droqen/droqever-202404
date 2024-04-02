@@ -230,12 +230,34 @@ _global_script_class_icons={
 
 [application]
 
-config/name="goguvin"
-config/icon="res://icon.png"
+config/name="2024, April 2: twice_touched_glider."
+config/description="hello! now button works"
+run/main_scene="res://goguvinXXI.tscn"
+boot_splash/image="res://simple10x10.png"
+boot_splash/fullsize=false
+boot_splash/bg_color=Color( 1, 1, 1, 1 )
+config/icon="res://simple10x10.png"
+boot_splash/filter=false
+
+[display]
+
+window/size/width=200
+window/size/height=130
+window/size/test_width=600
+window/size/test_height=390
+window/stretch/mode="viewport"
+
+[dynamic_fonts]
+
+use_oversampling=false
 
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+
+[network]
+
+limits/debugger_stdout/max_errors_per_frame=100
 
 [physics]
 
@@ -244,6 +266,9 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 quality/driver/driver_name="GLES2"
+2d/snapping/use_gpu_pixel_snap=true
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+environment/default_clear_color=Color( 1, 1, 1, 1 )
 environment/default_environment="res://default_env.tres"
+quality/2d/use_pixel_snap=true
