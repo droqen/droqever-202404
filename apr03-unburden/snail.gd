@@ -42,13 +42,11 @@ func _physics_process(_delta):
 	
 	# grab some inputs
 	var stick : Vector2
-	var down : PinButton
 	var a : PinButton = PinButton.new() # blank pinbutton
 	if pin.pc:
-		stick = pin.pc.stick.get_smooth_vector()
-		down = pin.pc.stick.down
+		stick = pin.pc.stick.get_dpad_smoothed_vector()
 		a = pin.pc.a # aheld, apressed
-	if ducking or down.held: stick.x = 0.0
+	if ducking or stick.y > 0: stick.x = 0.0
 	if position.x < -245: stick.x = -1
 	if position.x > 675: stick.x = 1
 	
@@ -88,7 +86,7 @@ func _physics_process(_delta):
 		velocity.y = -1.2 if carst.id == CAR else -1.5
 	process_slidey_move()
 	
-	if down.held and bufs.has(FLORBUF) and velocity.y >= 0:
+	if stick.y > 0 and bufs.has(FLORBUF) and velocity.y >= 0:
 		ducking = true
 		var cell = maze.world_to_map(position)
 		position.x = lerp(position.x, maze.map_to_world(cell).x + 5, 0.5)

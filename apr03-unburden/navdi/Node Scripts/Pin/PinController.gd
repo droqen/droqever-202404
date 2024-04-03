@@ -12,14 +12,16 @@ var pin_keyboard = PinInputSource.new()
 var pin_gamepad = PinInputSource.new()
 var pins = [pin_droqever, pin_keyboard, pin_gamepad]
 
-const GAMEPAD_DEADZONE = 0.1
+const DROQEVER_TOUCH_DEFAULT_DEADZONE = 0.25
+const GAMEPAD_DEFAULT_DEADZONE = 0.1
 
 var stick : PinStick = PinStick.new()
 var a : PinButton = PinButton.new()
 
 func _ready():
 	add_to_group("pincontroller")
-	pin_gamepad.stick.deadzone = GAMEPAD_DEADZONE
+	pin_droqever.stick.deadzone = DROQEVER_TOUCH_DEFAULT_DEADZONE
+	pin_gamepad.stick.deadzone = GAMEPAD_DEFAULT_DEADZONE
 	call_deferred("add_child", pin_droqever)
 	call_deferred("add_child", pin_keyboard)
 	call_deferred("add_child", pin_gamepad)
@@ -42,10 +44,14 @@ func _input(event):
 			KEY_Z, KEY_X, KEY_SPACE, KEY_ENTER: pin_keyboard.a.pin(event.pressed)
 	if event is InputEventJoypadButton:
 		match event.button_index:
-			11: pin_gamepad.stick.pin_dpad(Vector2.UP,    event.pressed)
-			12: pin_gamepad.stick.pin_dpad(Vector2.DOWN,  event.pressed)
-			13: pin_gamepad.stick.pin_dpad(Vector2.LEFT,  event.pressed)
-			14: pin_gamepad.stick.pin_dpad(Vector2.RIGHT, event.pressed)
+			# it's not quite right to use 'keyboard' for these buttons
+			# but whatever, that's fine
+			# *discrete buttons* trump floopy floaty sticks
+			12: pin_keyboard.stick.pin_dpad(Vector2.UP,    event.pressed)
+			13: pin_keyboard.stick.pin_dpad(Vector2.DOWN,  event.pressed)
+			14: pin_keyboard.stick.pin_dpad(Vector2.LEFT,  event.pressed)
+			15: pin_keyboard.stick.pin_dpad(Vector2.RIGHT, event.pressed)
+			# face buttons
 			0, 1, 2, 3: pin_gamepad.a.pin(event.pressed)
 	if event is InputEventJoypadMotion:
 		match event.axis:

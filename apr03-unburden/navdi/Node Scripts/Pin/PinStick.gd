@@ -1,7 +1,9 @@
 class_name PinStick
 extends Reference
 
-const TAPZONE : float = 0.95
+var dpad_smooth : float = 0.35
+
+const TAPZONE : float = 0.90
 
 var vector : Vector2
 # taps
@@ -52,3 +54,40 @@ func get_smooth_vector() -> Vector2:
 	if raw_amp <= deadzone: return Vector2.ZERO
 	var raw_dir : Vector2 = raw_vector.normalized()
 	return raw_dir * lerp(0, 1, inverse_lerp(deadzone, TAPZONE, raw_amp))
+
+func get_dpad_vector() -> Vector2:
+	return Vector2(
+		(1 if right.held else 0) - (1 if left.held else 0),
+		(1 if down.held else 0) - (1 if up.held else 0)
+	)
+
+func get_squared_vector() -> Vector2:
+	var dirlen = vector.length()
+	if dirlen < 0.0001: return Vector2.ZERO
+	var dir : Vector2 = vector.normalized()
+	return vector / max(abs(dir.x),abs(dir.y))
+	
+func get_dpad_smoothed_vector() -> Vector2:
+	var square_vector = get_squared_vector()
+	
+	if abs(square_vector.x) > dpad_smooth: square_vector.x = (
+		sign(square_vector.x)
+			*lerp( 0, 1,
+				inverse_lerp( dpad_smooth, 1,
+					abs(square_vector.x)
+				)
+			)
+		)
+	else: square_vector.x = 0.0
+	
+	if abs(square_vector.y) > dpad_smooth: square_vector.y = (
+		sign(square_vector.y)
+			*lerp( 0, 1,
+				inverse_lerp( dpad_smooth, 1,
+					abs(square_vector.y)
+				)
+			)
+		)
+	else: square_vector.y = 0.0
+	
+	return square_vector
