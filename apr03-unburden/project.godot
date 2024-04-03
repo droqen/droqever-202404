@@ -236,20 +236,20 @@ _global_script_class_icons={
 
 [application]
 
-config/name="2024, April 1: droqever."
-run/main_scene="res://navdi/Prefabs/QuickSetupNavdiXXI.tscn"
-boot_splash/image="res://navdi/Resources/icon.png"
+config/name="2024, April 3: unburden."
+run/main_scene="res://UnburdenXXI.tscn"
+boot_splash/image="res://assets/unburden10x10.png"
 boot_splash/fullsize=false
-boot_splash/bg_color=Color( 0, 0, 0, 1 )
-config/icon="res://navdi/Resources/icon.png"
+boot_splash/bg_color=Color( 1, 1, 1, 1 )
+config/icon="res://assets/unburden10x10.png"
 boot_splash/filter=false
 
 [display]
 
-window/size/width=200
-window/size/height=130
-window/size/test_width=600
-window/size/test_height=390
+window/size/width=130
+window/size/height=200
+window/size/test_width=390
+window/size/test_height=600
 window/stretch/mode="viewport"
 
 [dynamic_fonts]
@@ -273,6 +273,6 @@ common/enable_pause_aware_picking=true
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
-environment/default_clear_color=Color( 0, 0, 0, 1 )
+environment/default_clear_color=Color( 1, 1, 1, 1 )
 environment/default_environment="res://default_env.tres"
 quality/2d/use_pixel_snap=true
