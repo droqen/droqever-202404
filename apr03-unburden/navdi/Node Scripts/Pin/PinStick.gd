@@ -53,7 +53,7 @@ func get_smooth_vector() -> Vector2:
 	var raw_amp : float = raw_vector.length()
 	if raw_amp <= deadzone: return Vector2.ZERO
 	var raw_dir : Vector2 = raw_vector.normalized()
-	return raw_dir * lerp(0, 1, inverse_lerp(deadzone, TAPZONE, raw_amp))
+	return raw_dir * clamp(lerp(0, 1, inverse_lerp(deadzone, TAPZONE, raw_amp)),0,1)
 
 func get_dpad_vector() -> Vector2:
 	return Vector2(
@@ -65,28 +65,31 @@ func get_squared_vector() -> Vector2:
 	var dirlen = vector.length()
 	if dirlen < 0.0001: return Vector2.ZERO
 	var dir : Vector2 = vector.normalized()
-	return vector / max(abs(dir.x),abs(dir.y))
+	var squared_vector : Vector2 = vector / max(abs(dir.x),abs(dir.y))
+	squared_vector.x = clamp(squared_vector.x, -1, 1)
+	squared_vector.y = clamp(squared_vector.y, -1, 1)
+	return squared_vector
 	
 func get_dpad_smoothed_vector() -> Vector2:
 	var square_vector = get_squared_vector()
 	
-	if abs(square_vector.x) > dpad_smooth: square_vector.x = (
-		sign(square_vector.x)
+	if abs(square_vector.x) > dpad_smooth: square_vector.x = clamp(
+			sign(square_vector.x)
 			*lerp( 0, 1,
 				inverse_lerp( dpad_smooth, 1,
 					abs(square_vector.x)
 				)
-			)
+			), -1, 1
 		)
 	else: square_vector.x = 0.0
 	
-	if abs(square_vector.y) > dpad_smooth: square_vector.y = (
-		sign(square_vector.y)
+	if abs(square_vector.y) > dpad_smooth: square_vector.y = clamp(
+			sign(square_vector.y)
 			*lerp( 0, 1,
 				inverse_lerp( dpad_smooth, 1,
 					abs(square_vector.y)
 				)
-			)
+			), -1, 1
 		)
 	else: square_vector.y = 0.0
 	
