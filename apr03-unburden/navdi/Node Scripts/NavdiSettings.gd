@@ -21,11 +21,11 @@ func _ready():
 	if not Engine.editor_hint:
 		var calculated_width = ProjectSettings.get("display/window/size/width")
 		var calculated_height = ProjectSettings.get("display/window/size/height")
-#		JavaScript.eval('setGameBaseSize(' + str(calculated_width) + ',' + str(calculated_height) + ');')
-#		JavaScript.eval('setGameDesc(`' +
-#			project_desc.replacen("`","'")
-##				.replacen("\n",'<br/>')
-#			+ '`);')
+		JavaScript.eval('setGameBaseSize(' + str(calculated_width) + ',' + str(calculated_height) + ');')
+		JavaScript.eval('setGameDesc(`' +
+			project_desc.replacen("`","'")
+#				.replacen("\n",'<br/>')
+			+ '`);')
 		queue_free()
 
 func _process(_delta):

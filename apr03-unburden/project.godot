@@ -19,11 +19,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://navdi/Utility Scripts/Bounds.gd"
 }, {
-"base": "Pin",
-"class": "BridgedPin",
-"language": "GDScript",
-"path": "res://navdi/Node Scripts/Pin/BridgedPin.gd"
-}, {
 "base": "Reference",
 "class": "Bufs",
 "language": "GDScript",
@@ -202,7 +197,6 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "BasePantograph": "",
 "Bounds": "",
-"BridgedPin": "",
 "Bufs": "",
 "ChoiceStack": "",
 "LumpyDictionary": "",
@@ -242,7 +236,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="2024, April 3: unburden."
+config/name="2024, April 1: droqever."
 run/main_scene="res://navdi/Prefabs/QuickSetupNavdiXXI.tscn"
 boot_splash/image="res://navdi/Resources/icon.png"
 boot_splash/fullsize=false

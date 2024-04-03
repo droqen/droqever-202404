@@ -23,35 +23,14 @@ func _ready():
 	call_deferred("add_child", pin_droqever)
 	call_deferred("add_child", pin_keyboard)
 	call_deferred("add_child", pin_gamepad)
-#	setup_action(DIR_N, [KEY_UP, KEY_W], [11], [1], [-1])
-#	setup_action(DIR_S, [KEY_DOWN, KEY_S], [12], [1], [1])
-#	setup_action(DIR_W, [KEY_LEFT, KEY_A], [13], [0], [-1])
-#	setup_action(DIR_E, [KEY_RIGHT, KEY_D], [14], [0], [1])
-#		# every face button is the "A" button
-#	setup_action(BUT_A, [KEY_Z, KEY_X, KEY_SPACE, KEY_ENTER], [0, 1, 2, 3])
-#	setup_action(BUT_A, [KEY_Z, KEY_SPACE, KEY_ENTER], [0, 2])
-#	setup_action(BUT_B, [KEY_X, KEY_SHIFT], [1, 3])
-#	setup_action("reset", [KEY_ESCAPE])
-
-#func setup_action(action, _keys = [], _joy_buttons = [], _joy_axes = [], _joy_axis_polarities = []):
-#	InputMap.add_action(action, DIR_DEADZONE)
-#	for key in _keys:
-#		var ie_key = InputEventKey.new()
-#		ie_key.scancode = key
-#		InputMap.action_add_event(action, ie_key)
-#	for jb in _joy_buttons:
-#		var ie_jb = InputEventJoypadButton.new()
-#		ie_jb.button_index = jb
-#		InputMap.action_add_event(action, ie_jb)
-#	if len(_joy_axes) != len(_joy_axis_polarities):
-#		push_error("PinSetup.gd - # of joy axes and their polarities are mismatched")
-#	else: for i in range(len(_joy_axes)):
-#		var ja = _joy_axes[i]
-#		var jp = _joy_axis_polarities[i]
-#		var ie_ja = InputEventJoypadMotion.new()
-#		ie_ja.axis = ja
-#		ie_ja.axis_value = jp
-#		InputMap.action_add_event(action, ie_ja)
+	if droqever_bridged:
+		var Bridge = JavaScript.get_interface("Bridge")
+		if Bridge:
+			Bridge.report_connection()
+			Bridge.setup_joystick_if_mobile(_jscb_get_droqever_input_changed)
+			print("gd.  Bridge complete")
+		else:
+			print("gd.  No bridge (maybe you're not running on web?)")
 
 func _input(event):
 	if event is InputEventKey:
