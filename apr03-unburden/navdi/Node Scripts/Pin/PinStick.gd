@@ -15,20 +15,15 @@ func pin(v : Vector2):
 	pin_axis(Vector2.RIGHT, v.x)
 	pin_axis(Vector2.DOWN, v.y)
 
-func pin_axis(axis : Vector2, v : float, deadzone : float = 0.0):
-	if deadzone > 0.0:
-		if v > deadzone: v = lerp(0, 1, inverse_lerp(deadzone, TAPZONE, v))
-		elif v < -deadzone: v = lerp(0, -1, inverse_lerp(-deadzone, -TAPZONE, v))
-		else: v = 0
-	
+func pin_axis(axis : Vector2, v : float):
 	if axis.x and not axis.y:
 		vector.x = v
-		left.pin(vector.x <= -1)
-		right.pin(vector.x >= 1)
+		left.pin(vector.x <= -TAPZONE)
+		right.pin(vector.x >= TAPZONE)
 	elif axis.y and not axis.x:
 		vector.y = v
-		up.pin(vector.y <= 1)
-		down.pin(vector.y >= 1)
+		up.pin(vector.y <= TAPZONE)
+		down.pin(vector.y >= TAPZONE)
 	else:
 		push_error("PinStick cannot handle bad pin axis "+str(axis))
 
@@ -48,3 +43,12 @@ func end_frame():
 func clr():
 	vector = Vector2.ZERO
 	for dir in dpad: dir.clr()
+
+var deadzone : float = 0.0
+
+func get_smooth_vector() -> Vector2:
+	var raw_vector : Vector2 = vector
+	var raw_amp : float = raw_vector.length()
+	if raw_amp <= deadzone: return Vector2.ZERO
+	var raw_dir : Vector2 = raw_vector.normalized()
+	return raw_dir * lerp(0, 1, inverse_lerp(deadzone, TAPZONE, raw_amp))

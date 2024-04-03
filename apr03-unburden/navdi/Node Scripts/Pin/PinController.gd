@@ -19,6 +19,7 @@ var a : PinButton = PinButton.new()
 
 func _ready():
 	add_to_group("pincontroller")
+	pin_gamepad.stick.deadzone = GAMEPAD_DEADZONE
 	call_deferred("add_child", pin_droqever)
 	call_deferred("add_child", pin_keyboard)
 	call_deferred("add_child", pin_gamepad)
@@ -69,8 +70,8 @@ func _input(event):
 			0, 1, 2, 3: pin_gamepad.a.pin(event.pressed)
 	if event is InputEventJoypadMotion:
 		match event.axis:
-			0: pin_gamepad.stick.pin_axis(Vector2.RIGHT,  event.axis_value, GAMEPAD_DEADZONE)
-			1: pin_gamepad.stick.pin_axis(Vector2.UP,     event.axis_value, GAMEPAD_DEADZONE)
+			0: pin_gamepad.stick.pin_axis(Vector2.RIGHT,  event.axis_value)
+			1: pin_gamepad.stick.pin_axis(Vector2.UP,     event.axis_value)
 
 func _get_droqever_input_changed(args):
 	pin_droqever.stick.pin(Vector2(args[0], args[1]))
@@ -79,7 +80,7 @@ func _get_droqever_input_changed(args):
 func _physics_process(_delta):
 	# stick
 	for pin in pins:
-		if pin.stick.vector:
+		if pin.stick.get_smooth_vector():
 			stick = pin.stick
 			break
 	# "a" button
