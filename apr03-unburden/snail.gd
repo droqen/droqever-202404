@@ -19,6 +19,7 @@ onready var carst = TinyState.new(CAR,self,"_on_movst_or_carst_change",true)
 func _on_movst_or_carst_change(then,now):
 	match [then,now]:
 		[AIR, LAND]: velocity.x *= 0.5
+	
 	match [movst.id,carst.id]:
 		[IDLE,CAR]: spr.setup([63])
 		[IDLE,NOCAR]: spr.setup([53])
