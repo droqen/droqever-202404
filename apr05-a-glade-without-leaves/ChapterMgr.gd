@@ -4,10 +4,12 @@ signal done_fading_in
 signal done_fading_out
 
 const CHAPTERS = [
+	"res://chapter-east-wind-blows.tscn",
+	"res://chapter-the-dock.tscn",
+	
 	"res://chapter-west-wind-blows.tscn",
 	"res://chapter-without-wind.tscn",
 	"res://chapter-fallen-leaves.tscn",
-	"res://chapter-east-wind-blows.tscn",
 ]
 
 var chapter_index = 0
