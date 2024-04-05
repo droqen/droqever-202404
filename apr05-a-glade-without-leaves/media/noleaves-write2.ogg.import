@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/noleaves-write2.ogg-71cdaa823a0f2472736630b5005ce8c4.oggstr"
+
+[deps]
+
+source_file="res://media/noleaves-write2.ogg"
+dest_files=[ "res://.import/noleaves-write2.ogg-71cdaa823a0f2472736630b5005ce8c4.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
