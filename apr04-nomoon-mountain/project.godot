@@ -238,10 +238,10 @@ _global_script_class_icons={
 
 config/name="2024, April 4: No-Moon."
 run/main_scene="res://NomoonXXI.tscn"
-boot_splash/image="res://navdi/Resources/icon.png"
+boot_splash/image="res://ass/no-moon10x10.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 1, 1, 1, 1 )
-config/icon="res://navdi/Resources/icon.png"
+config/icon="res://ass/no-moon10x10.png"
 boot_splash/filter=false
 
 [display]

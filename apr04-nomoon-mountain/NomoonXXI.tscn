@@ -7,7 +7,7 @@
 [ext_resource path="res://navdi/Node Scripts/Maze/FlagEditor/flags_sprites.png" type="Texture" id=5]
 [ext_resource path="res://navdi/Node Scripts/Maze/FlagEditor/FlagEditorScene.tscn" type="PackedScene" id=6]
 [ext_resource path="res://navdi/Node Scripts/Pin/PinController.gd" type="Script" id=7]
-[ext_resource path="res://navdi/Resources/icon.png" type="Texture" id=8]
+[ext_resource path="res://ass/no-moon10x10.png" type="Texture" id=8]
 [ext_resource path="res://moonmoth.gd" type="Script" id=9]
 [ext_resource path="res://navdi/Node Scripts/Sheet/SheetSprite.gd" type="Script" id=10]
 [ext_resource path="res://ass/no-moon-sheet.tres" type="Resource" id=11]
