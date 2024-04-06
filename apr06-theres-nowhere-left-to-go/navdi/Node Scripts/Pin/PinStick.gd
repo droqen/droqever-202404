@@ -24,7 +24,7 @@ func pin_axis(axis : Vector2, v : float):
 		right.pin(vector.x >= TAPZONE)
 	elif axis.y and not axis.x:
 		vector.y = v
-		up.pin(vector.y <= TAPZONE)
+		up.pin(vector.y <= -TAPZONE)
 		down.pin(vector.y >= TAPZONE)
 	else:
 		push_error("PinStick cannot handle bad pin axis "+str(axis))
