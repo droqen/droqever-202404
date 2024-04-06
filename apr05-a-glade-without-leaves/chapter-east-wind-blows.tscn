@@ -3196,7 +3196,7 @@ position = Vector2( 0, -3 )
 texture = ExtResource( 12 )
 hframes = 10
 vframes = 10
-frame = 2
+frame = 1
 script = ExtResource( 6 )
 sprite_sheet = ExtResource( 3 )
 _frames = [ 1, 2 ]
@@ -3228,7 +3228,8 @@ scale_amount_random = 1.0
 [node name="intro" parent="." instance=ExtResource( 5 )]
 bbcode_text = "My mind was preoccupied with fighting the easter wind, on the way back, and for a time I forgot what I had come out here for in the first place.
 
-The distraction was fleeting.
+The distraction was fleeting, as
+, , , . ,
 "
 
 [node name="strong_wind" type="Node" parent="."]
