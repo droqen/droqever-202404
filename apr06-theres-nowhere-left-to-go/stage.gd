@@ -103,12 +103,12 @@ func _on_stagest_chg(then,now):
 			$combat.show() # visible but paused
 
 func _physics_process(_delta):
-	if Input.is_key_pressed(KEY_ESCAPE) and not $nav/mazeplayer.can_leave: # DEBUG_PURPOSES
-		$bgm.stop()
-		unseen_displayed_ending = true
-		$textbox.set_print_text("There's nowhere left to go.")
-		$nav/mazeplayer.can_leave = true
-		stagest.goto(NAV_TEXTBOX)
+#	if Input.is_key_pressed(KEY_ESCAPE) and not $nav/mazeplayer.can_leave: # DEBUG_PURPOSES
+#		$bgm.stop()
+#		unseen_displayed_ending = true
+#		$textbox.set_print_text("There's nowhere left to go.")
+#		$nav/mazeplayer.can_leave = true
+#		stagest.goto(NAV_TEXTBOX)
 #
 	if unseen == 0 and not unseen_displayed_ending and stagest.id == NAV and not $nav/mazeplayer.bumped:
 		if unseen_ending_pending < 100:
