@@ -1,6 +1,6 @@
 extends NavdiMazeNobody
 
-signal half_done
+signal half_done(message0)
 
 var can_leave : bool = false
 
@@ -74,7 +74,7 @@ func _physics_process(_delta):
 		failedmove_dur -= 1
 		if can_leave and bumpbuf >= 99:
 			if failedmove_dur == 5:
-				emit_signal("half_done")
+				emit_signal("half_done", bumped.description.split("\n\n")[0])
 			if failedmove_dur <= 0:
 				queue_free()
 	var dx : int = vector_to_center().x

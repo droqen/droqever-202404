@@ -23,6 +23,6 @@ func _physics_process(_delta):
 		unseen_thing_count = unseen
 		emit_signal("update_unseen_thing_count", unseen_thing_count)
 
-func _on_player_half_done():
-	display_description("...")
+func _on_player_half_done(first_line):
+	display_description(first_line+"\n\n... But I'm going back anyway.")
 	emit_signal("update_unseen_thing_count", -1)
