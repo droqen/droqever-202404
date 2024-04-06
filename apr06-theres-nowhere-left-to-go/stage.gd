@@ -75,9 +75,9 @@ func _on_stagest_chg(then,now):
 					$bgm.stream = BGM_OVERWORLD
 					$bgm.play()
 			match unseen:
-				-1:
-					$bgm.volume_db = 0
-					$bgm.play()
+#				-1:
+#					$bgm.volume_db = 0
+#					$bgm.play()
 				0: $bgm.volume_db = -16
 				1: $bgm.volume_db = -14
 				2: $bgm.volume_db = -12
