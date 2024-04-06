@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/left-p.ogg-7e0c3da32703a0d9de71ed11a4d32768.oggstr"
+
+[deps]
+
+source_file="res://media/left-p.ogg"
+dest_files=[ "res://.import/left-p.ogg-7e0c3da32703a0d9de71ed11a4d32768.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

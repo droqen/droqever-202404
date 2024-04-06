@@ -23,6 +23,7 @@ func _physics_process(delta):
 			if pc.stick.up.pressed:
 				position = lerp(position, startpos, 0.5)
 				push = Vector2(-2,-2)
+				$bump.play()
 			if pc.stick.down.pressed:
 				position = lerp(position, startpos, 0.5)
 				push = Vector2(0,2)

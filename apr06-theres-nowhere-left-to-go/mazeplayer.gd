@@ -1,5 +1,6 @@
 extends NavdiMazeNobody
 
+var can_leave : bool = false
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -22,7 +23,7 @@ func _physics_process(_delta):
 	var prev_dpad : Vector2 = dpad
 	dpad = Vector2(0, 0)
 	var pc = $Pin.pc
-	if bumpbuf > 0:
+	if bumpbuf > 0 and bumpbuf < 99:
 		bumpbuf -= 1
 		if bumpbuf <= 0:
 			bumped.post_bump()
@@ -47,21 +48,30 @@ func _physics_process(_delta):
 		if padrepeat == 0: # i.e. if not moving
 			for move in moves:
 				if try_bump(move):
-					bumpbuf = 10
+					if bumpbuf < 10: bumpbuf = 10
 					failedmove_dir = move
 					failedmove_dur = 5
 					padrepeat = 99
+					if bumpbuf < 99:
+						$bump.pitch_scale = 1.2
+						$bump.play()
+					else:
+						failedmove_dur = 10
 					break
-		if bumpbuf == 0: # i.e. no bump target found
-			for move in moves:
-				failedmove_dir = move
-				failedmove_dur = 5
-				padrepeat = 99
-				break
+			if bumpbuf == 0: # i.e. no bump target found
+				for move in moves:
+					failedmove_dir = move
+					failedmove_dur = 5
+					padrepeat = 99
+					$bump.pitch_scale = 1.0
+					$bump.play()
+					break
 	
 	if failedmove_dur > 0:
 		position += failedmove_dir * 2
 		failedmove_dur -= 1
+		if failedmove_dur <= 0 and can_leave and bumpbuf >= 99:
+			queue_free()
 	var dx : int = vector_to_center().x
 	var dy : int = vector_to_center().y
 	position.x += sign(dx) * ceil(abs(dx)/10.0)
@@ -78,6 +88,9 @@ func try_bump(move) -> bool:
 		if body.has_method('bump'):
 			bumped = body
 			bumpbuf = 10
+			if can_leave:
+				bumpbuf = 99
+				return true # don't bump the other body
 			body.bump(move)
 			return true
 	return false

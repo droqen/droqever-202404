@@ -8,10 +8,12 @@ func _ready():
 
 var bump_dir : Vector2
 var bump_dur : int
+var unseen : bool = true
 
 func bump(dir : Vector2):
 	bump_dir = dir
 	bump_dur = 5
+	unseen = false
 
 func post_bump():
 	get_parent().display_description(description)
