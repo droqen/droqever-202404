@@ -236,7 +236,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="2024, April 5: leafless."
+config/name="2024, April 5: Leaves."
 run/main_scene="res://NoLeavesXXI.tscn"
 boot_splash/image="res://media/leafless10x10.png"
 boot_splash/fullsize=false

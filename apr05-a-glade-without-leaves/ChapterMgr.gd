@@ -4,12 +4,11 @@ signal done_fading_in
 signal done_fading_out
 
 const CHAPTERS = [
-	"res://chapter-east-wind-blows.tscn",
-	"res://chapter-the-dock.tscn",
-	
 	"res://chapter-west-wind-blows.tscn",
 	"res://chapter-without-wind.tscn",
 	"res://chapter-fallen-leaves.tscn",
+	"res://chapter-east-wind-blows.tscn",
+	"res://chapter-the-dock.tscn",
 ]
 
 var chapter_index = 0
@@ -63,6 +62,7 @@ func fade_in():
 	if $paintsound.playing: yield($paintsound, "finished")
 	get_tree().paused = false
 	yield(get_tree().create_timer(0.5),"timeout")
+	prints("debug.  chapter",chapter)
 	chapter.get_node("intro").resume_nodelay()
 	emit_signal("done_fading_in")
 
@@ -86,7 +86,8 @@ func fade_out():
 	emit_signal("done_fading_out")
 
 func debug_skip() -> bool:
-	return Input.is_key_pressed(KEY_ENTER)
+	return false
+#	return Input.is_key_pressed(KEY_ENTER)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

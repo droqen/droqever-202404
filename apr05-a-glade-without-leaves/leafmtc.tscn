@@ -35,4 +35,3 @@ scroll_active = false
 
 [node name="blip" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -5.0

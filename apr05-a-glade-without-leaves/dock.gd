@@ -1,6 +1,8 @@
 extends Node
 
 onready var maze = $"../maze"
+onready var intro = $"../intro"
+onready var player = $"../easter"
 
 var f : float = 0.0
 
@@ -13,3 +15,8 @@ func _process(delta):
 		var all39s = maze.get_used_cells_by_id(39)
 		for cell in all38s: maze.set_cellv(cell, 39)
 		for cell in all39s: maze.set_cellv(cell, 38)
+		if intro.is_done():
+			if player:
+				$"../erase".play()
+				player.queue_free()
+				player = null

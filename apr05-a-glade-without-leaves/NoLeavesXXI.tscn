@@ -1774,7 +1774,7 @@ height = 180
 bg_color = Color( 1, 1, 1, 1 )
 project_month = "April"
 project_day = "5"
-project_name = "leafless"
+project_name = "Leaves"
 project_icon = ExtResource( 8 )
 
 [node name="ChapterMgr" type="Node2D" parent="."]
@@ -1795,5 +1795,5 @@ tileset_image = ExtResource( 1 )
 
 [node name="paintsound" type="AudioStreamPlayer" parent="ChapterMgr"]
 stream = ExtResource( 16 )
-volume_db = -10.0
+volume_db = -5.0
 pitch_scale = 0.25
