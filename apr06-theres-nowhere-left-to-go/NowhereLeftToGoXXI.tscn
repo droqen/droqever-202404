@@ -5029,7 +5029,7 @@ script = ExtResource( 19 )
 [node name="forest" type="Position2D" parent="stage/nav"]
 position = Vector2( 145, 45 )
 script = ExtResource( 20 )
-description = "I've already found the secret forest path into the castle."
+description = "I've already been through the secret back way."
 
 [node name="SheetSprite" type="Sprite" parent="stage/nav/forest"]
 pause_mode = 2
@@ -5125,7 +5125,7 @@ _frame_period = 0
 [node name="mountain2" type="Position2D" parent="stage/nav"]
 position = Vector2( 55, 65 )
 script = ExtResource( 20 )
-description = "I've already explored the caverns enough."
+description = "I've already explored the caverns thoroughly."
 
 [node name="SheetSprite" type="Sprite" parent="stage/nav/mountain2"]
 pause_mode = 2

@@ -1,5 +1,7 @@
 extends NavdiMazeNobody
 
+signal half_done
+
 var can_leave : bool = false
 
 # Declare member variables here. Examples:
@@ -70,8 +72,11 @@ func _physics_process(_delta):
 	if failedmove_dur > 0:
 		position += failedmove_dir * 2
 		failedmove_dur -= 1
-		if failedmove_dur <= 0 and can_leave and bumpbuf >= 99:
-			queue_free()
+		if can_leave and bumpbuf >= 99:
+			if failedmove_dur == 5:
+				emit_signal("half_done")
+			if failedmove_dur <= 0:
+				queue_free()
 	var dx : int = vector_to_center().x
 	var dy : int = vector_to_center().y
 	position.x += sign(dx) * ceil(abs(dx)/10.0)
