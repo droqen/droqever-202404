@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/market_bought2.ogg-aef44f331c0b797814ae7d76b902ed47.oggstr"
+
+[deps]
+
+source_file="res://media/market_bought2.ogg"
+dest_files=[ "res://.import/market_bought2.ogg-aef44f331c0b797814ae7d76b902ed47.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
