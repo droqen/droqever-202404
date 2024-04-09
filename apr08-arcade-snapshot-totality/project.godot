@@ -238,10 +238,10 @@ _global_script_class_icons={
 
 config/name="2024, April 8: Totality."
 run/main_scene="res://TotalityXXI.tscn"
-boot_splash/image="res://navdi/Resources/icon.png"
+boot_splash/image="res://media/totality10x10.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 1, 1, 1, 1 )
-config/icon="res://navdi/Resources/icon.png"
+config/icon="res://media/totality10x10.png"
 boot_splash/filter=false
 
 [display]
