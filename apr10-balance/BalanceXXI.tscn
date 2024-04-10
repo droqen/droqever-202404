@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://stage.tscn" type="PackedScene" id=1]
+[ext_resource path="res://media/balance10x10.png" type="Texture" id=2]
+[ext_resource path="res://navdi/Node Scripts/NavdiSettings.gd" type="Script" id=3]
+[ext_resource path="res://navdi/Node Scripts/Pin/PinController.gd" type="Script" id=7]
+
+[node name="XXI" type="Node2D"]
+
+[node name="pincontroller" type="Node" parent="."]
+script = ExtResource( 7 )
+
+[node name="settings" type="Node" parent="."]
+script = ExtResource( 3 )
+width = 110
+height = 80
+bg_color = Color( 1, 1, 1, 1 )
+project_month = "April"
+project_day = "10"
+project_name = "Temptation"
+project_icon = ExtResource( 2 )
+
+[node name="stage" parent="." instance=ExtResource( 1 )]
