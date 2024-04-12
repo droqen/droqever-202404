@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/apr11-melancholy-place-lower-rate.ogg-0d41d081f9879fd504c2ee6dd213d126.oggstr"
+
+[deps]
+
+source_file="res://media/apr11-melancholy-place-lower-rate.ogg"
+dest_files=[ "res://.import/apr11-melancholy-place-lower-rate.ogg-0d41d081f9879fd504c2ee6dd213d126.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

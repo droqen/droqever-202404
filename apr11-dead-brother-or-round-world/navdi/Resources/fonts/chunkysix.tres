@@ -3,6 +3,6 @@
 [ext_resource path="res://navdi/Resources/fonts/raw/chunkysix.ttf" type="DynamicFontData" id=1]
 
 [resource]
-extra_spacing_top = -2
+extra_spacing_top = -5
 extra_spacing_bottom = -2
 font_data = ExtResource( 1 )
