@@ -3201,3 +3201,21 @@ margin_bottom = 63.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 9 )
 text = "a vessel for poetry"
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 1.0
+margin_top = 89.0
+margin_right = 128.0
+margin_bottom = 103.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 9 )
+text = "rogue chapter selector"
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 15.0
+margin_top = 29.0
+margin_right = 142.0
+margin_bottom = 43.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 9 )
+text = "apr 12."
