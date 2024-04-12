@@ -236,12 +236,12 @@ _global_script_class_icons={
 
 [application]
 
-config/name="2024, April 11: Choices."
+config/name="2024, April 11: The Black Valley."
 run/main_scene="res://ChoicesXXI.tscn"
-boot_splash/image="res://navdi/Resources/icon.png"
+boot_splash/image="res://media/the_black_valley10x10.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0.792157, 0.792157, 0.792157, 1 )
-config/icon="res://navdi/Resources/icon.png"
+config/icon="res://media/the_black_valley10x10.png"
 boot_splash/filter=false
 
 [display]

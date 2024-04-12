@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/apr11-melancholy-place-short.ogg-2bed6f838001c667459f3ff9e615224b.oggstr"
+
+[deps]
+
+source_file="res://media/apr11-melancholy-place-short.ogg"
+dest_files=[ "res://.import/apr11-melancholy-place-short.ogg-2bed6f838001c667459f3ff9e615224b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -19,6 +19,13 @@ func get_roomlabel_for_room(rx:int,ry:int):
 		var label_ry : int = int(floor(label_pos.y / ROOM_HEIGHT))
 		if label_rx == rx and label_ry == ry:
 			return label.text
+	match ry:
+		2: return "XXI. the world"
+		3: return "could not be expressed in"
+		4: return "anything less than itself"
+		5,6: return "forever,"
+		7: return "forever."
+		_: return ""
 	return "(none @\n"+str(rx)+", "+str(ry)+")"
 
 
