@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/apr12-string-time 2024-04-12 1349.ogg-17fd83e18036c394feba120745e639b3.oggstr"
+
+[deps]
+
+source_file="res://media/apr12-string-time 2024-04-12 1349.ogg"
+dest_files=[ "res://.import/apr12-string-time 2024-04-12 1349.ogg-17fd83e18036c394feba120745e639b3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
