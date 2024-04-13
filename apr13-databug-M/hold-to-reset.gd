@@ -15,7 +15,8 @@ func _process(delta):
 		else:
 			hold += delta * 0.25
 		if hold > 1.0:
-			get_tree().change_scene("res://InTheDatabaseXXI.tscn")
+			get_tree().call_group("stage", "reset_game")
+#			get_tree().change_scene("res://InTheDatabaseXXI.tscn")
 			hold = 0
 	elif not player_held_and_not_idle:
 		hold -= 3 * delta
