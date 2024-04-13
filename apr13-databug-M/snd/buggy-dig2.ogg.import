@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/buggy-dig2.ogg-ad4f0d2c492fb36e37cd3a38485ec190.oggstr"
+
+[deps]
+
+source_file="res://snd/buggy-dig2.ogg"
+dest_files=[ "res://.import/buggy-dig2.ogg-ad4f0d2c492fb36e37cd3a38485ec190.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

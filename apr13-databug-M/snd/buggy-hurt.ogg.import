@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/buggy-hurt.ogg-3d1f7444c16e3cdfdfdba33c4946c496.oggstr"
+
+[deps]
+
+source_file="res://snd/buggy-hurt.ogg"
+dest_files=[ "res://.import/buggy-hurt.ogg-3d1f7444c16e3cdfdfdba33c4946c496.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

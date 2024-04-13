@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/buggy-coin.ogg-16d1b3b02bce812a6c30fd3eff37679f.oggstr"
+
+[deps]
+
+source_file="res://snd/buggy-coin.ogg"
+dest_files=[ "res://.import/buggy-coin.ogg-16d1b3b02bce812a6c30fd3eff37679f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

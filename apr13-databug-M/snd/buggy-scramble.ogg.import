@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/buggy-scramble.ogg-c3760e19238627bbd841e82a2732cc7b.oggstr"
+
+[deps]
+
+source_file="res://snd/buggy-scramble.ogg"
+dest_files=[ "res://.import/buggy-scramble.ogg-c3760e19238627bbd841e82a2732cc7b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
