@@ -22,7 +22,9 @@ func setup(faceleft : bool):
 	position.x += -10 if faceleft else 10
 	$SheetSprite.set_frame_index(00)
 	life = len($SheetSprite._frames) * $SheetSprite._frame_period
+	$SheetSprite.flip_h = faceleft
 	slashst.goto(WINDUP)
+	$swing.play()
 
 func _physics_process(_delta):
 	slashst.goto($SheetSprite.frame)

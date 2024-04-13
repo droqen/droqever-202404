@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/vessel_dddd.ogg-fee3d2f4875eac8adfe4f7a8abdbf89b.oggstr"
+
+[deps]
+
+source_file="res://media/vessel_dddd.ogg"
+dest_files=[ "res://.import/vessel_dddd.ogg-fee3d2f4875eac8adfe4f7a8abdbf89b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

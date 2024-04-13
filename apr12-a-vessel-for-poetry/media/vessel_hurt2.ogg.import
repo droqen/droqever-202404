@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/vessel_hurt2.ogg-92ea5721cdfac305da5269fc8f825ac7.oggstr"
+
+[deps]
+
+source_file="res://media/vessel_hurt2.ogg"
+dest_files=[ "res://.import/vessel_hurt2.ogg-92ea5721cdfac305da5269fc8f825ac7.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
