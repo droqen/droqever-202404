@@ -24,10 +24,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://navdi/Utility Scripts/bufs.gd"
 }, {
+"base": "Resource",
+"class": "Card",
+"language": "GDScript",
+"path": "res://cards/Card.gd"
+}, {
 "base": "Reference",
 "class": "ChoiceStack",
 "language": "GDScript",
 "path": "res://navdi/Utility Scripts/ChoiceStack.gd"
+}, {
+"base": "Node",
+"class": "Ev",
+"language": "GDScript",
+"path": "res://evs/Ev.gd"
 }, {
 "base": "Reference",
 "class": "LumpyDictionary",
@@ -203,7 +213,9 @@ _global_script_class_icons={
 "BasePantograph": "",
 "Bounds": "",
 "Bufs": "",
+"Card": "",
 "ChoiceStack": "",
+"Ev": "",
 "LumpyDictionary": "",
 "MarchingTextContainer": "",
 "MazeObjectData": "",
@@ -242,12 +254,12 @@ _global_script_class_icons={
 
 [application]
 
-config/name="2024, April 14: Soldier Sister."
+config/name="2024, April 14: An Ending."
 run/main_scene="res://SisterCreaturesXXI.tscn"
-boot_splash/image="res://navdi/Resources/icon.png"
+boot_splash/image="res://media/ending10x10.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 1, 1, 1, 1 )
-config/icon="res://navdi/Resources/icon.png"
+config/icon="res://media/ending10x10.png"
 boot_splash/filter=false
 
 [display]
@@ -277,6 +289,7 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 quality/driver/driver_name="GLES2"
+2d/snapping/use_gpu_pixel_snap=true
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_clear_color=Color( 1, 1, 1, 1 )
