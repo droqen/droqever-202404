@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://museumgoer.gd" type="Script" id=1]
+[ext_resource path="res://navdi/Node Scripts/NavdiBanker.gd" type="Script" id=2]
+[ext_resource path="res://navdi/Node Scripts/NavdiSettings.gd" type="Script" id=3]
+[ext_resource path="res://maze.tscn" type="PackedScene" id=4]
+[ext_resource path="res://media/museum_sheet.tres" type="Resource" id=5]
+[ext_resource path="res://navdi/Node Scripts/Sheet/SheetSprite.gd" type="Script" id=6]
+[ext_resource path="res://navdi/Node Scripts/Pin/PinController.gd" type="Script" id=7]
+[ext_resource path="res://media/museum.png" type="Texture" id=8]
+[ext_resource path="res://navdi/Node Scripts/Pin/Pin.gd" type="Script" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3, 4 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 2 )
+
+[node name="XXI" type="Node2D"]
+
+[node name="pincontroller" type="Node" parent="." groups=["pincontroller"]]
+script = ExtResource( 7 )
+
+[node name="bank" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="settings" type="Node" parent="."]
+script = ExtResource( 3 )
+bg_color = Color( 1, 1, 1, 1 )
+project_month = "April"
+project_day = "15"
+project_name = "Museum I"
+project_icon = ExtResource( 8 )
+
+[node name="maze" parent="." instance=ExtResource( 4 )]
+
+[node name="museumgoer" type="KinematicBody2D" parent="."]
+position = Vector2( 29, 86 )
+collision_layer = 512
+script = ExtResource( 1 )
+
+[node name="SheetSprite" type="Sprite" parent="museumgoer"]
+texture = ExtResource( 8 )
+hframes = 10
+vframes = 10
+frame = 20
+script = ExtResource( 6 )
+sprite_sheet = ExtResource( 5 )
+_frames = [ 20 ]
+
+[node name="Pin" type="Node" parent="museumgoer"]
+script = ExtResource( 9 )
+
+[node name="body_shape" type="CollisionShape2D" parent="museumgoer"]
+shape = SubResource( 1 )
+
+[node name="carried_shape" type="CollisionShape2D" parent="museumgoer"]
+shape = SubResource( 1 )
+
+[node name="carried_bank" type="Node" parent="museumgoer"]
+script = ExtResource( 2 )
+starting_group_container = NodePath("..")
+
+[node name="carried_block" type="Sprite" parent="museumgoer/carried_bank"]
+position = Vector2( 29, 76 )
+texture = ExtResource( 8 )
+hframes = 10
+vframes = 10
+frame = 12
+script = ExtResource( 6 )
+sprite_sheet = ExtResource( 5 )
+_frames = [ 12 ]
+
+[node name="carried" type="Node2D" parent="museumgoer"]
+
+[node name="floor" type="Area2D" parent="museumgoer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="museumgoer/floor"]
+position = Vector2( 0, 8 )
+shape = SubResource( 2 )
