@@ -14,7 +14,7 @@
 extents = Vector2( 3, 4 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 10, 2 )
+extents = Vector2( 3, 1 )
 
 [node name="XXI" type="Node2D"]
 
@@ -33,6 +33,7 @@ project_name = "Museum I"
 project_icon = ExtResource( 8 )
 
 [node name="maze" parent="." instance=ExtResource( 4 )]
+tile_data = PoolIntArray( 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 7, 2, 0, 8, 2, 0, 9, 2, 0, 65536, 2, 0, 65544, 2, 0, 131072, 2, 0, 131080, 2, 0, 196608, 2, 0, 196616, 2, 0, 262144, 2, 0, 262152, 2, 0, 327680, 2, 0, 327684, 2, 0, 327685, 2, 0, 327689, 2, 0, 393217, 2, 0, 393220, 2, 0, 393221, 2, 0, 393225, 2, 0, 458753, 2, 0, 458761, 2, 0, 524289, 2, 0, 524297, 2, 0, 589824, 2, 0, 589825, 2, 0, 589826, 2, 0, 589827, 2, 0, 589828, 2, 0, 589829, 2, 0, 589830, 2, 0, 589831, 2, 0, 589832, 2, 0, 589833, 2, 0 )
 
 [node name="museumgoer" type="KinematicBody2D" parent="."]
 position = Vector2( 29, 86 )
@@ -76,5 +77,5 @@ _frames = [ 12 ]
 [node name="floor" type="Area2D" parent="museumgoer"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="museumgoer/floor"]
-position = Vector2( 0, 8 )
+position = Vector2( 0, 5 )
 shape = SubResource( 2 )
