@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://media/doorappear.wav" type="AudioStream" id=1]
+[ext_resource path="res://media/damage_sheet.tres" type="Resource" id=2]
+[ext_resource path="res://navdi/Node Scripts/Sheet/SheetSprite.gd" type="Script" id=3]
+[ext_resource path="res://media/damage.png" type="Texture" id=4]
+[ext_resource path="res://hidden_door.gd" type="Script" id=6]
+[ext_resource path="res://media/ksh.wav" type="AudioStream" id=7]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 1, 1 )
+
+[node name="hidden_door" type="Sprite"]
+position = Vector2( 198, 110 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 60, 0, 30, 20 )
+script = ExtResource( 6 )
+
+[node name="trig_left" type="Area2D" parent="."]
+position = Vector2( -3, 10 )
+collision_layer = 0
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trig_left"]
+shape = SubResource( 5 )
+
+[node name="trig_right" type="Area2D" parent="."]
+position = Vector2( 3, 10 )
+collision_layer = 0
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trig_right"]
+shape = SubResource( 5 )
+
+[node name="appear" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = 5.0
+pitch_scale = 0.62
+bus = "Sfx"
+
+[node name="ksh" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+bus = "Sfx"
+
+[node name="opening_eye" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+hframes = 10
+vframes = 10
+frame = 27
+script = ExtResource( 3 )
+sprite_sheet = ExtResource( 2 )
+_frames = [ 26, 27, 28 ]
+_frame_period = 15
